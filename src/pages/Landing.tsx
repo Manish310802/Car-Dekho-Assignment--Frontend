@@ -31,59 +31,70 @@ const SEGMENTS = [
 
 export function Landing() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-12 sm:py-20">
-      {/* HERO — left-aligned editorial */}
-      <div className="max-w-3xl">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-600">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          AI-powered · Free · No signup
-        </div>
+    <div className="mx-auto max-w-5xl px-4 py-6 sm:py-10">
 
-        <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-black leading-[1.05] tracking-tight text-zinc-900">
-          Too many cars,
-          <br />
-          <span className="text-zinc-400">not enough clarity.</span>
-          <br />
-          Let's fix that.
-        </h1>
+      {/* HERO — dark card with subtle dot texture */}
+      <div className="relative overflow-hidden rounded-3xl bg-zinc-900 px-8 py-14 sm:px-14 sm:py-20">
+        {/* White dot grid overlay — differentiates hero texture from page bg */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+        />
+        {/* Faint gradient blob — top-right depth */}
+        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-zinc-700 opacity-40 blur-3xl" />
 
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-500">
-          Answer 5 questions about your budget, your life, and what matters. Get a ranked shortlist
-          with a clear, honest reason for every pick — and refine it in plain English.
-        </p>
+        <div className="relative max-w-2xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1.5 text-xs font-semibold text-zinc-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            AI-powered · Free · No signup
+          </div>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <Link
-            to="/wizard"
-            className="inline-flex items-center gap-2 rounded-2xl bg-zinc-900 px-8 py-3.5 text-base font-bold text-white transition hover:bg-zinc-700"
-          >
-            Find my car
-            <svg className="h-4 w-4" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-          <span className="text-sm text-zinc-400">No account needed</span>
-        </div>
+          <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-black leading-[1.05] tracking-tight text-white">
+            Too many cars,
+            <br />
+            <span className="text-zinc-500">not enough clarity.</span>
+            <br />
+            Let's fix that.
+          </h1>
 
-        {/* Stats strip */}
-        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2">
-          {SOCIAL_PROOF.map((item) => (
-            <span key={item} className="flex items-center gap-1.5 text-sm text-zinc-400">
-              <span className="h-1 w-1 rounded-full bg-zinc-300" />
-              {item}
-            </span>
-          ))}
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-400">
+            Answer 5 questions about your budget, your life, and what matters. Get a ranked
+            shortlist with a clear, honest reason for every pick — and refine it in plain English.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              to="/wizard"
+              className="inline-flex items-center gap-2 rounded-2xl bg-white px-8 py-3.5 text-base font-bold text-zinc-900 transition hover:bg-zinc-100"
+            >
+              Find my car
+              <svg className="h-4 w-4" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+            <span className="text-sm text-zinc-500">No account needed</span>
+          </div>
+
+          {/* Stats strip */}
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-zinc-800 pt-8">
+            {SOCIAL_PROOF.map((item) => (
+              <span key={item} className="flex items-center gap-1.5 text-sm text-zinc-500">
+                <span className="h-1 w-1 rounded-full bg-zinc-700" />
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* HOW IT WORKS */}
-      <div className="mt-16 rounded-3xl border border-zinc-200 bg-white px-8 py-10">
+      <div className="mt-4 rounded-3xl border border-zinc-200 bg-white px-8 py-10">
         <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400">How it works</p>
         <div className="mt-8 grid gap-8 sm:grid-cols-3">
           {HOW.map((step) => (
-            <div key={step.n}>
-              <div className="text-4xl font-black text-zinc-300">{step.n}</div>
-              <h3 className="mt-2 text-base font-bold text-zinc-900">{step.title}</h3>
+            <div key={step.n} className="relative">
+              <div className="text-5xl font-black text-zinc-100">{step.n}</div>
+              <h3 className="mt-3 text-base font-bold text-zinc-900">{step.title}</h3>
               <p className="mt-1 text-sm leading-relaxed text-zinc-500">{step.body}</p>
             </div>
           ))}
@@ -91,15 +102,15 @@ export function Landing() {
       </div>
 
       {/* SEGMENTS */}
-      <div className="mt-6 rounded-3xl border border-zinc-200 bg-white px-8 py-10">
+      <div className="mt-4 rounded-3xl border border-zinc-200 bg-white px-8 py-10">
         <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400">
           Segments covered
         </p>
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {SEGMENTS.map((seg) => (
             <div
               key={seg.label}
-              className="rounded-2xl border border-zinc-100 bg-zinc-50 px-4 py-4 text-center transition hover:border-zinc-300 hover:bg-white"
+              className="rounded-2xl border border-zinc-100 bg-zinc-50 px-4 py-5 text-center transition hover:border-zinc-300 hover:bg-white hover:shadow-sm"
             >
               <div className="text-2xl">{seg.icon}</div>
               <div className="mt-2 text-xs font-bold text-zinc-900">{seg.label}</div>
@@ -110,11 +121,11 @@ export function Landing() {
       </div>
 
       {/* BOTTOM CTA */}
-      <div className="mt-24 rounded-3xl bg-zinc-900 px-8 py-12 text-center">
+      <div className="mt-4 rounded-3xl bg-zinc-900 px-8 py-12 text-center">
         <h2 className="text-2xl font-black text-white sm:text-3xl">
           Confused about which car to buy?
         </h2>
-        <p className="mx-auto mt-3 max-w-md text-sm text-zinc-300">
+        <p className="mx-auto mt-3 max-w-md text-sm text-zinc-400">
           You're 60 seconds from a ranked, explained shortlist. No ads, no dealer referrals.
         </p>
         <Link
@@ -124,6 +135,10 @@ export function Landing() {
           Get my shortlist →
         </Link>
       </div>
+
+      <p className="mt-6 text-center text-[11px] text-zinc-400">
+        Prices are indicative ex-showroom figures · Verify with your nearest dealer
+      </p>
     </div>
   )
 }
