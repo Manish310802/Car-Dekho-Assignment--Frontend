@@ -105,14 +105,14 @@ export function Wizard() {
   const back = () => setStep((s) => Math.max(0, s - 1))
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-10 sm:py-16">
+    <div className="mx-4 my-8 max-w-2xl rounded-3xl border border-zinc-200 bg-white px-5 pb-8 pt-6 shadow-sm sm:mx-auto sm:my-14 sm:px-10 sm:pb-10">
       {/* Progress header */}
       <div className="mb-10 flex items-center gap-4">
         {step > 0 && (
           <button
             onClick={back}
             disabled={submitting}
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-400 transition hover:border-indigo-300 hover:text-indigo-600 disabled:opacity-30"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-400 transition hover:border-zinc-400 hover:text-zinc-700 disabled:opacity-30"
           >
             ←
           </button>
@@ -126,7 +126,7 @@ export function Wizard() {
           </div>
           <div className="h-1 overflow-hidden rounded-full bg-zinc-100">
             <div
-              className="progress-bar h-full rounded-full bg-indigo-600"
+              className="progress-bar h-full rounded-full bg-zinc-900"
               style={{ width: `${((step + 1) / STEPS) * 100}%` }}
             />
           </div>
@@ -206,8 +206,8 @@ export function Wizard() {
                   onClick={() => setTransmission(t.value)}
                   className={`flex-1 rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${
                     transmission === t.value
-                      ? 'border-indigo-600 bg-indigo-600 text-white'
-                      : 'border-zinc-200 text-zinc-600 hover:border-indigo-300 hover:text-indigo-600'
+                      ? 'border-zinc-900 bg-zinc-900 text-white'
+                      : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'
                   }`}
                 >
                   {t.label}
@@ -257,7 +257,7 @@ export function Wizard() {
         <button
           onClick={next}
           disabled={!canContinue || submitting}
-          className="w-full rounded-2xl bg-indigo-600 py-4 text-base font-bold text-white transition hover:bg-indigo-700 disabled:opacity-40 sm:w-auto sm:px-12"
+          className="w-full rounded-2xl bg-zinc-900 py-4 text-base font-bold text-white transition hover:bg-zinc-700 disabled:opacity-40 sm:w-auto sm:px-12"
         >
           {submitting ? (
             <span className="flex items-center justify-center gap-2">
@@ -312,8 +312,8 @@ function OptionRow({
       onClick={onClick}
       className={`option-btn flex w-full items-center rounded-2xl border px-4 py-3.5 text-left ${
         active
-          ? 'border-indigo-600 bg-indigo-600 text-white **:text-white'
-          : 'border-zinc-200 bg-white text-zinc-900 hover:border-indigo-300'
+          ? 'border-zinc-900 bg-zinc-900 text-white **:text-white'
+          : 'border-zinc-200 bg-zinc-50 text-zinc-900 hover:border-zinc-400'
       }`}
     >
       {children}
@@ -335,8 +335,8 @@ function OptionCard({
       onClick={onClick}
       className={`option-btn flex w-full flex-col rounded-2xl border p-4 text-left ${
         active
-          ? 'border-indigo-600 bg-indigo-600 text-white **:text-white'
-          : 'border-zinc-200 bg-white text-zinc-900 hover:border-indigo-300'
+          ? 'border-zinc-900 bg-zinc-900 text-white **:text-white'
+          : 'border-zinc-200 bg-zinc-50 text-zinc-900 hover:border-zinc-400'
       }`}
     >
       {children}

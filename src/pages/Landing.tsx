@@ -44,7 +44,7 @@ export function Landing() {
           <br />
           <span className="text-zinc-400">not enough clarity.</span>
           <br />
-          <span className="text-indigo-600">Let's fix that.</span>
+          Let's fix that.
         </h1>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-500">
@@ -55,7 +55,7 @@ export function Landing() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
             to="/wizard"
-            className="inline-flex items-center gap-2 rounded-2xl bg-indigo-600 px-8 py-3.5 text-base font-bold text-white transition hover:bg-indigo-700"
+            className="inline-flex items-center gap-2 rounded-2xl bg-zinc-900 px-8 py-3.5 text-base font-bold text-white transition hover:bg-zinc-700"
           >
             Find my car
             <svg className="h-4 w-4" viewBox="0 0 16 16" fill="currentColor">
@@ -77,9 +77,9 @@ export function Landing() {
       </div>
 
       {/* HOW IT WORKS */}
-      <div className="mt-24 border-t border-zinc-100 pt-16">
+      <div className="mt-16 rounded-3xl border border-zinc-200 bg-white px-8 py-10">
         <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400">How it works</p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+        <div className="mt-8 grid gap-8 sm:grid-cols-3">
           {HOW.map((step) => (
             <div key={step.n}>
               <div className="text-4xl font-black text-zinc-100">{step.n}</div>
@@ -91,7 +91,7 @@ export function Landing() {
       </div>
 
       {/* SEGMENTS */}
-      <div className="mt-20 border-t border-zinc-100 pt-16">
+      <div className="mt-6 rounded-3xl border border-zinc-200 bg-white px-8 py-10">
         <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400">
           Segments covered
         </p>
@@ -99,7 +99,7 @@ export function Landing() {
           {SEGMENTS.map((seg) => (
             <div
               key={seg.label}
-              className="rounded-2xl border border-zinc-200 bg-white px-4 py-4 text-center transition hover:border-zinc-400"
+              className="rounded-2xl border border-zinc-100 bg-zinc-50 px-4 py-4 text-center transition hover:border-zinc-300 hover:bg-white"
             >
               <div className="text-2xl">{seg.icon}</div>
               <div className="mt-2 text-xs font-bold text-zinc-900">{seg.label}</div>

@@ -14,8 +14,8 @@ function Header() {
           to="/"
           className="flex items-center gap-2.5 font-black tracking-tight text-zinc-900"
         >
-          <span className="text-lg">Car<span className="text-indigo-600">Match</span></span>
-          <span className="hidden rounded-full bg-indigo-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-indigo-500 sm:inline">
+          <span className="text-lg">CarMatch</span>
+          <span className="hidden rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-zinc-500 sm:inline">
             AI advisor
           </span>
         </Link>
@@ -23,7 +23,7 @@ function Header() {
         {!isWizard && (
           <Link
             to="/wizard"
-            className="rounded-xl bg-indigo-600 px-4 py-2 text-xs font-bold text-white transition hover:bg-indigo-700"
+            className="rounded-xl bg-zinc-900 px-4 py-2 text-xs font-bold text-white transition hover:bg-zinc-700"
           >
             Find my car →
           </Link>
@@ -35,7 +35,7 @@ function Header() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#fafafa]">
+    <div className="min-h-screen">
       <Header />
       <main>
         <Routes>
