@@ -44,7 +44,7 @@ export function Landing() {
           <br />
           <span className="text-zinc-400">not enough clarity.</span>
           <br />
-          Let's fix that.
+          <span className="text-indigo-600">Let's fix that.</span>
         </h1>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-500">
@@ -55,7 +55,7 @@ export function Landing() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
             to="/wizard"
-            className="inline-flex items-center gap-2 rounded-2xl bg-zinc-900 px-8 py-3.5 text-base font-bold text-white transition hover:bg-zinc-700"
+            className="inline-flex items-center gap-2 rounded-2xl bg-indigo-600 px-8 py-3.5 text-base font-bold text-white transition hover:bg-indigo-700"
           >
             Find my car
             <svg className="h-4 w-4" viewBox="0 0 16 16" fill="currentColor">
@@ -114,7 +114,7 @@ export function Landing() {
         <h2 className="text-2xl font-black text-white sm:text-3xl">
           Confused about which car to buy?
         </h2>
-        <p className="mx-auto mt-3 max-w-md text-sm text-zinc-400">
+        <p className="mx-auto mt-3 max-w-md text-sm text-zinc-300">
           You're 60 seconds from a ranked, explained shortlist. No ads, no dealer referrals.
         </p>
         <Link

@@ -25,7 +25,7 @@ export function ChatRefine({ onRefine, busy }: Props) {
   return (
     <div className="rounded-2xl border border-zinc-200 bg-white p-5">
       <div className="flex items-start gap-3">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-base">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-base">
           🤖
         </div>
         <div className="flex-1">
@@ -53,7 +53,7 @@ export function ChatRefine({ onRefine, busy }: Props) {
         <button
           type="submit"
           disabled={busy || !text.trim()}
-          className="rounded-xl bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-700 disabled:opacity-40"
+          className="rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:opacity-40"
         >
           {busy ? (
             <span className="flex items-center gap-1.5">

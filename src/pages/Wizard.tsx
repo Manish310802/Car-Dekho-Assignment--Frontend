@@ -112,7 +112,7 @@ export function Wizard() {
           <button
             onClick={back}
             disabled={submitting}
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-400 transition hover:border-zinc-400 hover:text-zinc-700 disabled:opacity-30"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-400 transition hover:border-indigo-300 hover:text-indigo-600 disabled:opacity-30"
           >
             ←
           </button>
@@ -126,7 +126,7 @@ export function Wizard() {
           </div>
           <div className="h-1 overflow-hidden rounded-full bg-zinc-100">
             <div
-              className="progress-bar h-full rounded-full bg-zinc-900"
+              className="progress-bar h-full rounded-full bg-indigo-600"
               style={{ width: `${((step + 1) / STEPS) * 100}%` }}
             />
           </div>
@@ -143,8 +143,8 @@ export function Wizard() {
                 active={budget.label === b.label}
                 onClick={() => setBudget(b)}
               >
-                <span className="font-bold text-zinc-900">{b.label}</span>
-                <span className="ml-auto text-xs text-zinc-400">{b.sublabel}</span>
+                <span className="font-bold">{b.label}</span>
+                <span className="ml-auto text-xs opacity-70">{b.sublabel}</span>
               </OptionRow>
             ))}
           </div>
@@ -162,8 +162,8 @@ export function Wizard() {
               >
                 <span className="text-2xl">{u.icon}</span>
                 <div className="mt-2">
-                  <div className="font-bold text-zinc-900">{u.label}</div>
-                  <div className="mt-0.5 text-xs text-zinc-500">{u.desc}</div>
+                  <div className="font-bold">{u.label}</div>
+                  <div className="mt-0.5 text-xs opacity-70">{u.desc}</div>
                 </div>
               </OptionCard>
             ))}
@@ -176,9 +176,9 @@ export function Wizard() {
           <div className="grid gap-2.5 sm:grid-cols-3">
             {SEAT_OPTIONS.map((s) => (
               <OptionCard key={s.value} active={seats === s.value} onClick={() => setSeats(s.value)}>
-                <div className="text-2xl font-black text-zinc-200">{s.value}</div>
-                <div className="mt-2 font-bold text-zinc-900">{s.label}</div>
-                <div className="mt-0.5 text-xs text-zinc-500">{s.desc}</div>
+                <div className="text-2xl font-black text-zinc-300">{s.value}</div>
+                <div className="mt-2 font-bold">{s.label}</div>
+                <div className="mt-0.5 text-xs opacity-70">{s.desc}</div>
               </OptionCard>
             ))}
           </div>
@@ -191,7 +191,7 @@ export function Wizard() {
             {FUELS.map((f) => (
               <OptionCard key={f.value} active={fuel === f.value} onClick={() => setFuel(f.value)}>
                 <span className="text-xl">{f.icon}</span>
-                <div className="mt-2 text-sm font-bold text-zinc-900">{f.label}</div>
+                <div className="mt-2 text-sm font-bold">{f.label}</div>
               </OptionCard>
             ))}
           </div>
@@ -206,8 +206,8 @@ export function Wizard() {
                   onClick={() => setTransmission(t.value)}
                   className={`flex-1 rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${
                     transmission === t.value
-                      ? 'border-zinc-900 bg-zinc-900 text-white'
-                      : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'
+                      ? 'border-indigo-600 bg-indigo-600 text-white'
+                      : 'border-zinc-200 text-zinc-600 hover:border-indigo-300 hover:text-indigo-600'
                   }`}
                 >
                   {t.label}
@@ -229,11 +229,11 @@ export function Wizard() {
               >
                 <span className="text-lg">{p.icon}</span>
                 <div className="ml-2">
-                  <div className="font-bold text-zinc-900">{p.label}</div>
-                  <div className="text-xs text-zinc-500">{p.desc}</div>
+                  <div className="font-bold">{p.label}</div>
+                  <div className="text-xs opacity-70">{p.desc}</div>
                 </div>
                 {priorities.includes(p.value) && (
-                  <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-zinc-900 text-[10px] text-white">
+                  <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-[10px] text-white">
                     ✓
                   </span>
                 )}
@@ -257,7 +257,7 @@ export function Wizard() {
         <button
           onClick={next}
           disabled={!canContinue || submitting}
-          className="w-full rounded-2xl bg-zinc-900 py-4 text-base font-bold text-white transition hover:bg-zinc-700 disabled:opacity-40 sm:w-auto sm:px-12"
+          className="w-full rounded-2xl bg-indigo-600 py-4 text-base font-bold text-white transition hover:bg-indigo-700 disabled:opacity-40 sm:w-auto sm:px-12"
         >
           {submitting ? (
             <span className="flex items-center justify-center gap-2">
@@ -312,8 +312,8 @@ function OptionRow({
       onClick={onClick}
       className={`option-btn flex w-full items-center rounded-2xl border px-4 py-3.5 text-left ${
         active
-          ? 'border-zinc-900 bg-zinc-900 text-white'
-          : 'border-zinc-200 bg-white text-zinc-900 hover:border-zinc-400'
+          ? 'border-indigo-600 bg-indigo-600 text-white **:text-white'
+          : 'border-zinc-200 bg-white text-zinc-900 hover:border-indigo-300'
       }`}
     >
       {children}
@@ -335,8 +335,8 @@ function OptionCard({
       onClick={onClick}
       className={`option-btn flex w-full flex-col rounded-2xl border p-4 text-left ${
         active
-          ? 'border-zinc-900 bg-zinc-900 text-white **:text-white'
-          : 'border-zinc-200 bg-white hover:border-zinc-400'
+          ? 'border-indigo-600 bg-indigo-600 text-white **:text-white'
+          : 'border-zinc-200 bg-white text-zinc-900 hover:border-indigo-300'
       }`}
     >
       {children}
