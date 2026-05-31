@@ -93,7 +93,7 @@ export function Landing() {
         <div className="mt-8 grid gap-8 sm:grid-cols-3">
           {HOW.map((step) => (
             <div key={step.n} className="relative">
-              <div className="text-5xl font-black text-zinc-100">{step.n}</div>
+              <div className="text-5xl font-black text-zinc-400">{step.n}</div>
               <h3 className="mt-3 text-base font-bold text-zinc-900">{step.title}</h3>
               <p className="mt-1 text-sm leading-relaxed text-zinc-500">{step.body}</p>
             </div>
