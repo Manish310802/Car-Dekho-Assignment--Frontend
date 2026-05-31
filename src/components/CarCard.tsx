@@ -125,7 +125,7 @@ export function CarCard({ scored, rank, selected, onToggleCompare }: Props) {
                 </div>
                 <div className="h-1 overflow-hidden rounded-full bg-zinc-100">
                   <div
-                    className="breakdown-bar h-full rounded-full bg-indigo-400"
+                    className="breakdown-bar h-full rounded-full bg-zinc-800"
                     style={{ width: `${val}%` }}
                   />
                 </div>
